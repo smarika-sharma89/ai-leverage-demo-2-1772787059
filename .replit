@@ -1,0 +1,22 @@
+run = "npm install --silent && npm run dev"
+entrypoint = "index.html"
+hidden = [".config", "package-lock.json"]
+
+[packager]
+language = "nodejs-npm"
+
+[packager.features]
+packageSearch = true
+guessImports = true
+enabledForHosting = false
+
+[languages]
+[languages.javascript]
+pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
+
+[nix]
+channel = "stable-23_11"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
